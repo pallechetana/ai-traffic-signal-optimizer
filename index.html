@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Traffic Signal Optimizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>AI Traffic Signal Optimizer</h1>
+      <p>Prototype for adaptive traffic signal timing using traffic density.</p>
+    </div>
+    <span class="badge">Prototype Demo</span>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>1. Traffic Input</h2>
+      <p class="muted">Enter the estimated number of vehicles in each lane.</p>
+      <div class="lane-grid">
+        <label>Lane 1
+          <input id="lane1" type="number" min="0" value="20">
+        </label>
+        <label>Lane 2
+          <input id="lane2" type="number" min="0" value="5">
+        </label>
+        <label>Lane 3
+          <input id="lane3" type="number" min="0" value="12">
+        </label>
+        <label>Lane 4
+          <input id="lane4" type="number" min="0" value="2">
+        </label>
+      </div>
+
+      <label class="ambulance">
+        <input id="ambulance" type="checkbox">
+        Ambulance detected in Lane 1 🚑
+      </label>
+
+      <button id="analyzeBtn">Analyze Traffic</button>
+    </section>
+
+    <section class="card">
+      <h2>2. AI Traffic Analysis</h2>
+      <div id="results" class="results"></div>
+    </section>
+
+    <section class="card signal-card">
+      <h2>3. Adaptive Signal</h2>
+      <div id="signal" class="signal-wrap">
+        <div class="traffic-light">
+          <span class="light red"></span>
+          <span class="light yellow"></span>
+          <span class="light green"></span>
+        </div>
+        <div>
+          <div id="activeLane" class="active-lane">Press “Analyze Traffic”</div>
+          <div id="timer" class="timer">-- sec</div>
+          <p id="reason" class="muted">The system will prioritize the lane based on traffic density.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>AI Traffic Signal Optimizer • Student Prototype</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

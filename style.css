@@ -1,0 +1,114 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+header {
+  padding: 28px 7%;
+  background: #172033;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+h1, h2 { margin-top: 0; }
+header h1 { margin-bottom: 8px; }
+.badge {
+  background: #ffffff22;
+  border: 1px solid #ffffff55;
+  padding: 9px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+main {
+  width: min(1000px, 92%);
+  margin: 28px auto;
+  display: grid;
+  gap: 20px;
+}
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 5px 20px #00000010;
+}
+.muted { color: #697386; }
+.lane-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+label { font-weight: 700; }
+input[type="number"] {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid #ccd3df;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.ambulance {
+  display: block;
+  margin: 18px 0;
+  font-weight: 600;
+}
+.ambulance input { transform: scale(1.2); margin-right: 8px; }
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 13px 20px;
+  background: #172033;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover { opacity: .9; }
+.results {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.result {
+  border: 1px solid #e0e5ed;
+  border-radius: 12px;
+  padding: 16px;
+}
+.result strong { display: block; margin-bottom: 8px; }
+.high { border-left: 5px solid #d33; }
+.medium { border-left: 5px solid #e3a400; }
+.low { border-left: 5px solid #29915b; }
+.signal-wrap {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.traffic-light {
+  width: 76px;
+  padding: 12px;
+  background: #20242c;
+  border-radius: 18px;
+  display: grid;
+  gap: 10px;
+}
+.light {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #555;
+  display: block;
+}
+.light.red.on { background: #e33; }
+.light.yellow.on { background: #e3a400; }
+.light.green.on { background: #24a35a; }
+.active-lane { font-size: 24px; font-weight: 800; }
+.timer { font-size: 42px; font-weight: 800; margin: 8px 0; }
+footer { text-align: center; color: #697386; padding: 10px 0 30px; }
+
+@media (max-width: 700px) {
+  .lane-grid, .results { grid-template-columns: 1fr 1fr; }
+  header { align-items: flex-start; flex-direction: column; }
+}
